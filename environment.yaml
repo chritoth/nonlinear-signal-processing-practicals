@@ -1,4 +1,4 @@
-name: nsp2022
+name: nsp2023
 channels:
   - pytorch
   - conda-forge
