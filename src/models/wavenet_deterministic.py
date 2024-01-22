@@ -72,6 +72,7 @@ class WaveNetDeterministic(nn.Module):
         signal_length = x.shape[2]
 
         x = self.initial_conv(F.pad(x, (self.kernel_size - 1, 0), value=0.))
+        x = torch.tanh(x)
         assert x.shape == (batch_size, self.num_kernels, signal_length)
 
         skip_sum = torch.zeros(batch_size, self.num_kernels, signal_length)
