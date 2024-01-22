@@ -102,7 +102,7 @@ class WaveNetDeterministic(nn.Module):
         Returns
         ----------
         torch.Tensor
-            The generated signal of of shape (num_samples)
+            The generated signal of shape (num_samples)
         """
         self.eval()
         assert initial_samples is None or len(initial_samples.shape) == 3
@@ -132,6 +132,7 @@ class WaveNetDeterministic(nn.Module):
         # generate samples
         for i in range(1, num_samples):
             residual = self.initial_conv(conv_buffer)
+            residual = torch.tanh(residual)
 
             skip_sum = torch.zeros(1, self.num_kernels, 1)
             for residual_block in self.residual_blocks:
