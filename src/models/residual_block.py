@@ -53,11 +53,14 @@ class ResidualBlock(nn.Module):
         """
 
         # ToDo: compute a forward pass given the conv buffer
+        # gated_conv = ...
+        # skip = ...
+        # residual = ...
 
-        # assert skip.shape == (1, self.num_channels, 1)
-        # assert residual.shape == (1, self.num_channels, 1)
-        #
-        # return skip, residual
+        assert skip.shape == (1, self.num_channels, 1)
+        assert residual.shape == (1, self.num_channels, 1)
+
+        return skip, residual
 
     def forward(self, x, fill_buffer=False):
         """Forward pass of the network.
@@ -80,13 +83,16 @@ class ResidualBlock(nn.Module):
         signal_length = x.shape[2]
 
         # ToDo: do proper padding
+        # z = F.pad(...)
 
         if fill_buffer:
             self.conv_buffer = z[:, :, -self.buffer_size:]
             assert self.conv_buffer.shape == (1, self.num_channels, self.buffer_size)
 
-
         # ToDo: implement the forward pass
+        # gated_conv = ...
+        # skip = ...
+        # residual = ...
 
         assert skip.shape == (batch_size, self.num_channels, signal_length)
         assert residual.shape == (batch_size, self.num_channels, signal_length)
