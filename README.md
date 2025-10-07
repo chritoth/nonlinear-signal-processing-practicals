@@ -1,8 +1,8 @@
 # Nonlinear Signal Processing
-This repository contains the teaching materials for the Nonlinear Signal Processing problem classes (442.022) held during the winter term 2023 at Graz University of Technology. You can enroll via the university's online interface [here](https://online.tugraz.at/). See the [course homepage](https://www.spsc.tugraz.at/courses/nonlinear-signal-processing.html) for additional information about the corresponding lecture. The content of this repository will be continuously updated as the course progresses.
+This repository contains the teaching materials for the Nonlinear Signal Processing problem classes (442.022) @ Graz University of Technology. You can enroll via the university's online interface [here](https://online.tugraz.at/).
 
 ## Course Overview
-This course serves as a supplement to the Nonlinear Signal Processing lecture (442.021), as we will elaborate on some of the theoretical concepts introduced in the lecture and discuss more recent applications (e.g. neural network architectures for system identification, normalizing flows, WaveNet, ...) of these principles. Finally, we will apply the gained knowledge by implementing some experiments. We will work ourselves through the content by roughly following the structure of the lecture. See the [Logistics](#logistics) for the planned schedule.
+This course serves as a supplement to the Nonlinear Signal Processing lecture (442.021), as we will elaborate on some of the theoretical concepts introduced in the lecture and discuss more recent applications (e.g. neural network architectures for system identification, normalizing flows, WaveNet, ...) of these principles. Finally, we will apply the gained knowledge by implementing some experiments. We will work ourselves through the content by roughly following the structure of the lecture.
 
 ### Prerequisites
 We expect you to know about undergraduate math, specifically basic probability theory and statistics (e.g. Bayes' Law, expectations, estimators, ...) and some linear algebra. Moreover, an introductory course in either machine learning or (linear) signal processing is strongly recommended. Knowledge about neural networks would be beneficial but is not necessary.  For the implementation tasks some experience with Python and the Numpy, Scipy and PyTorch packages would come in handy, but that is nothing you cannot learn during the course. Apart from that, we will try to keep the course as self-contained as possible.
@@ -18,13 +18,10 @@ For each of the  three main topic blocks you will have to complete one homework 
 | 75 <= P <   88     | (2) Good             |
 | 88 <= P <= 100  | (1) Excellent      |
 
-A word on plagiarism: don't do it, there is no benefit in it for anyone (especially not for you). In addition to our corrections your submissions will undergo an automated plagiarism test. Should we discover any form of plagiarism (e.g. copying solution from the internet without citing its source, copying solutions from other groups, etc.) we will expel the culprits from the course.
 
 ## Logistics
 
-We will try to cover the materials in approximately eight sessions (90 minutes each), but we can have additional sessions if we need more time. The sessions will be done in-person (see [TUG Online](https://online.tugraz.at/) for information on the lecture hall). Participation is of course recommended but not a formal requirement. 
-
-We will use email and the TeachCenter forum for communicating. For personal issues (e.g. regarding organization, grading, ...) you can of course contact me personally ([contact information](https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenId=714AAFF2617048A1&pPersonenGruppe=3)).
+We will try to cover the materials in approximately eight sessions (90 minutes each), but we can have additional sessions if we need more time. The sessions will be done in-person (see [TUG Online](https://online.tugraz.at/) for information on the lecture hall). Communication will be done via email. For personal issues (e.g. regarding organization, grading, ...) you can of course contact me personally ([contact information](https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenId=714AAFF2617048A1&pPersonenGruppe=3)).
 
 ## Getting Started
 Follow the instructions below to get your (Linux) system ready for working on the assignments. ***We strongly recommend you to work on a Linux-based system.*** It will make your life easier. Alternatively, working on a Mac should do as well. It might be painful to get your setup right on Windows (although it's doable).
@@ -32,14 +29,14 @@ Follow the instructions below to get your (Linux) system ready for working on th
 ### 1. Get a local copy of this repository
 To get a local copy of this repository, simply run
 ```
-git clone https://github.com/chritoth/nonlinear-signal-processing-2023.git
+git clone https://github.com/chritoth/nonlinear-signal-processing-practicals.git
 ```
 If you are unfamiliar with Git, [Atlassian](https://www.atlassian.com/git/tutorials) provides you with some nice and compact tutorials. You could start by reading about [what Git actually is](https://www.atlassian.com/git/tutorials/what-is-git) or get a nice [cheat sheet](file:///tmp/mozilla_chri0/SWTM-2088_Atlassian-Git-Cheatsheet.pdf) for the most common Git commands.
 
 #### Optional: Work in your own Git repository
 In case you want to work in your own git repository (e.g. on Github), you can add this repository as an upstream
 ```
-git remote add upstream https://github.com/chritoth/nonlinear-signal-processing-2023.git
+git remote add upstream https://github.com/chritoth/nonlinear-signal-processing-practicals.git
 ```
 and grab the latest updates from the course repository e.g. via
 ```
@@ -53,22 +50,22 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
-Once you have Miniconda installed, create a virtual environment from the included environment description in `environment.yml` like so:
+Once you have Miniconda installed, create a virtual environment from the included environment description in `environment.yaml` like so:
 ```
-conda env create -f /path/to/local/nonlinear-signal-processing-2023/environment.yaml
+conda env create -f /path/to/local/nonlinear-signal-processing-practicals/environment.yaml
 ```
 Finally, activate the conda environment via 
 ```
-conda activate nsp2023
+conda activate nsp
 ```
 and set your python path to the repository root
 ```
-export PYTHONPATH="/path/to/local/nonlinear-signal-processing-2023/"
+export PYTHONPATH="/path/to/local/nonlinear-signal-processing-practicals/"
 ```
 
 In case the environment specification in the `environment.yaml` changes after you have created you conda environment, you can simply update it via
 ```
-conda env update -n nsp2023 -f environment.yaml
+conda env update -n nsp -f environment.yaml
 ```
 
 #### Optional: Latex for Matplotlib
