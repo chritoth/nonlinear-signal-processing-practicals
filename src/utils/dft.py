@@ -35,16 +35,15 @@ def dft(x, fs, n_dft=None, window='hann', onesided=True):
 
     # this is a little hack to avoid leakage around f=0 which would mess up our scaling in the onesided case
     xmean = np.mean(x)
-    x -= xmean
 
     # compute the DFT and generate the corresponding frequency vector
-    xdft = np.abs(sf.fft(x * win, n_dft))
+    xdft = np.abs(sf.fft((x - xmean) * win, n_dft))
     xdft[0] = xmean  # manually add the signal mean (i.e. amplitude @ f=0) bec we removed it before computing the fft
     freq = np.arange(n_dft) / n_dft * fs
 
     if onesided:
         # take only the one-sided spectrum
-        num_onesided = np.int(n_dft / 2) + (n_dft % 2)  # number of DFT samples in the one-sided spectrum
+        num_onesided = n_dft // 2 + (n_dft % 2)  # number of DFT samples in the one-sided spectrum
         freq = freq[:num_onesided]
         xdft = xdft[:num_onesided]
         xdft[1:] *= 2  # correct scaling
